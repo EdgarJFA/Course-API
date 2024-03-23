@@ -1,5 +1,6 @@
 package com.edgar.gestaocursos.cursos.entity;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -27,8 +28,10 @@ public class CoursesEntity {
     private UUID id;
     @NotBlank()
     @Length(max = 255, message = "The 'name' field must contain a maximum of 255 characters.")
+    @Schema(example = "Java", requiredMode = Schema.RequiredMode.REQUIRED)
     private String name;
     @NotBlank()
+    @Schema(example = "Back-end", requiredMode = Schema.RequiredMode.REQUIRED)
     private String category;
     private boolean active;
     @CreationTimestamp
